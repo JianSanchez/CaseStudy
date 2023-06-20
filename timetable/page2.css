@@ -1,0 +1,359 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Playfair", serif;
+}
+
+:root {
+  --PrimaryColor: hsl(225, 50%, 48%);
+  --SecondaryColor: hsl(180, 17%, 95%);
+  --colorOne: hsl(0, 84%, 57%);
+  --colorTwo: hsl(61, 100%, 50%);
+  --colorThree: hsl(115, 65%, 49%);
+  --HoverColor: hsl(225, 56%, 59%);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 12%);
+  --textColor: hsl(240, 1%, 48%);
+  --borderColor: hsl(0, 0%, 83%);
+  --whiteColorDream: hsl(0, 0%, 93%);
+  --greyBg: hsl(0, 0%, 96%);
+  --greyText: rgb(145, 145, 145);
+  --inputColor: hsl(330, 12%, 97%);
+  --boxShadow: box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05)
+  0px 4px 6px -2px;
+  --transition: .4s ease-in-out;
+}
+
+body {
+  background: var(--whiteColor);
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.section {
+  padding: 4rem 0 2rem;
+}
+
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.icon {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+}
+
+.none {
+  display: none;
+}
+
+.btn {
+  padding: 0.7rem 1.5rem;
+  background-color: var(--PrimaryColor);
+  border: none;
+  outline: none;
+  border-radius: 3rem;
+  cursor: pointer;
+  color: var(--whiteColor);
+}
+.btn a {
+  color: var(--whiteColor);
+  font-weight: 500;
+}
+.btn:hover {
+  background: var(--HoverColor);
+}
+
+img, video {
+  width: 100%;
+  height: auto;
+}
+
+input {
+  font-size: 100%;
+  color: var(--greyText);
+}
+
+p {
+  font-size: 13px;
+  color: var(--greyText);
+  line-height: 22px;
+}
+
+h4 {
+  padding: 1rem 0;
+  font-weight: 700;
+  color: var(--blackColor);
+}
+
+h2 {
+  font-size: 25px;
+  padding: 1rem 0;
+  color: var(--blackColor);
+}
+
+.timetable-container {
+  padding-top: 10%;
+}
+
+.timetable-container-one {
+  border: 1px solid black;
+  padding: 10px;
+  width: 700px;
+  margin: auto;
+  border-radius: 3%;
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-column label {
+  font-weight: bold;
+  font-size: large;
+}
+
+.another-container h1 {
+  color: #4CAF50;
+}
+
+.form-column input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  width: auto;
+}
+
+.timeNav {
+  position: fixed;
+  flex-direction: column;
+  width: 100%;
+  z-index: 1000;
+}
+.timeNav .navBarOne, .timeNav .navBarTwo {
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
+}
+.timeNav .navBarOne .logoDiv .Logo {
+  width: 90px;
+}
+.timeNav .top-nav li {
+  list-style-type: none;
+  font-size: 18px;
+  width: 80%;
+  padding: 0;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.timeNav .top-nav ul {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+.timeNav .top-nav .color-one {
+  color: rgb(27, 172, 160);
+}
+.timeNav .top-nav .color-two {
+  color: rgb(194, 74, 74);
+}
+.timeNav .navBarOne {
+  background: var(--SecondaryColor);
+}
+.timeNav .navBarOne .icon:hover {
+  color: var(--PrimaryColor);
+}
+.timeNav .navBarOne .atb {
+  gap: 1rem;
+}
+.timeNav .navBarOne .atb span {
+  color: var(--blackColor);
+  font-size: 13px;
+  cursor: pointer;
+}
+.timeNav .navBarOne .atb span:hover {
+  color: var(--PrimaryColor);
+  font-size: 700;
+}
+.timeNav .navBarTwo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 3rem;
+  padding: 1.5rem 1rem;
+  position: fixed;
+  transition: 0.3s ease-in-out;
+}
+@media screen and (max-width: 768px) {
+  .timeNav .navBarTwo .navBarMenu {
+    position: absolute;
+    background: var(--SecondaryColor);
+    padding: 1.5rem;
+    border-radius: 10px;
+    top: 5rem;
+    right: -50%;
+    width: 80%;
+    transform: translateX(50%);
+    z-index: 2000;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px, 4px, 6px, -2px;
+    border: 3px solid var(--whiteColor);
+    transition: 0.4s ease-in-out;
+  }
+  .timeNav .navBarTwo .navBarMenu .menu {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .timeNav .navBarTwo .navBarMenu .menu .listItem {
+    padding: 0.5rem 0;
+    cursor: pointer;
+    color: var(--blackColor);
+  }
+  .timeNav .navBarTwo .navBarMenu .menu .listItem:hover {
+    color: var(--PrimaryColor);
+    font-weight: 700;
+  }
+  .timeNav .navBarTwo .navBarMenu .btnOne {
+    display: block;
+    justify-content: center;
+    margin: auto;
+    margin-top: 1rem;
+  }
+  .timeNav .navBarTwo .btnTwo {
+    display: none;
+  }
+}
+.timeNav .navBarTwo .toggleIcon .icon {
+  font-size: 30px;
+  color: var(--blackColor);
+}
+.timeNav .navBarTwo .showNavBar {
+  right: 50%;
+  transition: 0.5s ease-in-out;
+}
+.timeNav .navbarWBG {
+  background: var(--SecondaryColor);
+  padding: 0.5rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.timeNav {
+  position: fixed;
+  flex-direction: column;
+  width: 100%;
+  z-index: 1000;
+}
+.timeNav .navBarOne, .timeNav .navBarTwo {
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
+}
+.timeNav .navBarOne {
+  background: var(--SecondaryColor);
+}
+.timeNav .navBarOne .icon:hover {
+  color: var(--PrimaryColor);
+}
+.timeNav .navBarOne .atb {
+  gap: 1rem;
+}
+.timeNav .navBarOne .atb span {
+  color: var(--blackColor);
+  font-size: 13px;
+  cursor: pointer;
+}
+.timeNav .navBarOne .atb span:hover {
+  color: var(--PrimaryColor);
+  font-size: 700;
+}
+.timeNav .navBarTwo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 3rem;
+  padding: 1.5rem 1rem;
+  position: fixed;
+  transition: 0.3s ease-in-out;
+}
+.timeNav .navBarTwo .logoDiv .Logo {
+  width: 20%;
+}
+@media screen and (max-width: 768px) {
+  .timeNav .navBarTwo .navBarMenu {
+    position: absolute;
+    background: var(--SecondaryColor);
+    padding: 1.5rem;
+    border-radius: 10px;
+    top: 5rem;
+    right: -50%;
+    width: 80%;
+    transform: translateX(50%);
+    z-index: 2000;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px, 4px, 6px, -2px;
+    border: 3px solid var(--whiteColor);
+    transition: 0.4s ease-in-out;
+  }
+  .timeNav .navBarTwo .navBarMenu .menu {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .timeNav .navBarTwo .navBarMenu .menu .listItem {
+    padding: 0.5rem 0;
+    cursor: pointer;
+    color: var(--blackColor);
+  }
+  .timeNav .navBarTwo .navBarMenu .menu .listItem:hover {
+    color: var(--PrimaryColor);
+    font-weight: 700;
+  }
+  .timeNav .navBarTwo .navBarMenu .btnOne {
+    display: block;
+    justify-content: center;
+    margin: auto;
+    margin-top: 1rem;
+  }
+  .timeNav .navBarTwo .btnTwo {
+    display: none;
+  }
+}
+.timeNav .navBarTwo .toggleIcon .icon {
+  font-size: 30px;
+  color: var(--blackColor);
+}
+.timeNav .navBarTwo .showNavBar {
+  right: 50%;
+  transition: 0.5s ease-in-out;
+}
+.timeNav .navbarWBG {
+  background: var(--SecondaryColor);
+  padding: 0.5rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}/*# sourceMappingURL=page2.css.map */
